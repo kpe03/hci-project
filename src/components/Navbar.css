@@ -1,0 +1,19 @@
+/* This file is used for specific customizations that i thought would
+be hard to implement with bootstrap */
+.text {
+    font-size: 20px;
+    font-family: "Roboto Condensed", sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+.titleButton {
+    font-size: 20px;
+    font-family: "Roboto Condensed", sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none; 
+    width: 280px;
+    height: 50px;
+}
