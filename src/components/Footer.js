@@ -4,17 +4,66 @@ import logo from '../acm.png';
 
 function Footer() {
     return (
-        <nav className="footer">
-            <h1 className="footer-title">Association For Computing Machinery</h1>
-            <img src={logo} alt="ACM logo" height="30" />
-            {/* <ul className="footer-links">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/services">Services</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-            </ul> */}
-        </nav>
-    );
+        <footer className="footer bg-dark text-white">
+          <div className="container-fluid p-0">
+            {/* Top Row - Association for Computing Machinery */}
+            <div className="row g-0">
+              <div className="col-12">
+                <a
+                  className="nav-link py-3"
+                  href="/"
+                  role="link"
+                  style={{ paddingLeft: '15px' }}
+                >
+                  Association for Computing Machinery
+                </a>
+              </div>
+            </div>
+            
+            {/* Bottom Row - Navigation Links */}
+            <div className="row g-0">
+              <div className="col d-flex flex-row align-items-center">
+                <a
+                  className="nav-link py-2 me-3"
+                  href="/about"
+                  role="link"
+                  style={{ paddingLeft: '15px' }}
+                >
+                  About
+                </a>
+                <a
+                  className="nav-link py-2 me-3"
+                  href="/publications"
+                  role="link"
+                >
+                  Publications
+                </a>
+                <a
+                  className="nav-link py-2 me-3"
+                  href="/community"
+                  role="link"
+                >
+                  Community
+                </a>
+                <a
+                  className="nav-link py-2 me-3"
+                  href="/education"
+                  role="link"
+                >
+                  Education
+                </a>
+                <a
+                  className="nav-link py-2"
+                  href="/contact"
+                  role="link"
+                >
+                  Connect with Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      );
 }
 
 export default Footer;
