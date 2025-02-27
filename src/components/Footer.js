@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Footer.css'
 import logo from '../acm.png';
 
 function Footer() {
@@ -10,10 +11,9 @@ function Footer() {
             <div className="row g-0">
               <div className="col-12">
                 <a
-                  className="nav-link py-3"
+                  className="nav-link py-3 navbar-title"
                   href="/"
                   role="link"
-                  style={{ paddingLeft: '15px' }}
                 >
                   Association for Computing Machinery
                 </a>
