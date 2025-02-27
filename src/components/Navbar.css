@@ -17,3 +17,28 @@ be hard to implement with bootstrap */
     width: 280px;
     height: 50px;
 }
+
+.navbar-content {
+  padding: 0 15px 0 15px;
+}
+
+.dropdown-container{
+  width: 70vw !important;
+  left: 0 !important;
+  right: 0 !important;
+  position: absolute !important;
+  top: 100%;
+  z-index: 1050;
+  padding: 15px;
+  background-color: #d6d6d6 !important;
+}
+
+.dropdown-link {
+  color:#00567D;
+  font-size: 13px;
+}
+
+.dropdown-col-container{
+  padding: 0 -50px 0 -20px;
+  
+}
