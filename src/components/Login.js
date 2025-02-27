@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +8,10 @@ const Login = () => {
   return (
     <div className="login-page">
       <div className="breadcrumb">
-        {`Home > Log In`}
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          Home
+        </Link>{" "}
+        {`> Log In`}
         <span className="breadcrumb-note"></span>
       </div>
 
