@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "./Login.css"; // We'll create this CSS file next
+import "./Login.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -21,7 +23,9 @@ const Login = () => {
 
       <div className="login-container">
         <div className="login-box">
-          <h2>Sign into your ACM Account</h2>
+          <h2>
+            <FontAwesomeIcon icon={faUser} /> Sign into your ACM Account
+          </h2>
           <form onSubmit={handleSubmit}>
             <div className="input-group">
               <label>Username</label>
@@ -32,7 +36,7 @@ const Login = () => {
                 placeholder="Username"
               />
               <a href="/forgot-username" className="forgot-link">
-                forgot username
+                Forgot username
               </a>
             </div>
 
@@ -45,7 +49,7 @@ const Login = () => {
                 placeholder="Password"
               />
               <a href="/forgot-password" className="forgot-link">
-                forgot password
+                Forgot password
               </a>
             </div>
 

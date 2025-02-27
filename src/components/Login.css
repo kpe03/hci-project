@@ -37,6 +37,8 @@
 .login-box h2 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .input-group {
@@ -53,12 +55,17 @@
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  margin-bottom: 5px;
 }
 
 .forgot-link {
   color: #0078d4;
   text-decoration: none;
   font-size: 0.8em;
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+  float: right;
 }
 
 .remember-me {
