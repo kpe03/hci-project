@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
 import Carousel from "./components/Carousel";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             }
           />
           <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} /> {/* Added Profile Route */}
         </Routes>
         <Footer />
       </div>
