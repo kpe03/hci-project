@@ -43,9 +43,9 @@ const Login = () => {
               </div>
             </div>
 
-            <button type="submit" className="sign-in-button">
+            <Link to="/profile" className="btn btn-primary me-2">
               SIGN IN
-            </button>
+              </Link>
             <p>
               Don't have an account?{" "}
               <a href="/register" className="register-link">
