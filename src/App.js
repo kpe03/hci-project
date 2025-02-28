@@ -18,7 +18,9 @@ import { AuthProvider, AuthContext } from './components/AuthContext';
 import { useContext } from 'react';
 
 
-function App() {
+function AppContent() {
+  const location = useLocation(); // Detect current route
+
   return (
     <Router>
       <div className="App">
