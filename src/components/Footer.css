@@ -15,34 +15,13 @@
     font-weight: bold;
 }
 
-.about-submenu {
+.about-submenu, .publications-submenu, .community-submenu, .education-submenu, .connect-submenu {
     padding-left: 40px;
     text-align: left;
     font-size: small;
+    font-weight: normal;
     color: grey;
 }
-
-.publications-submenu {
-    padding-left: 40px;
-    text-align: left;
-    font-size: small;
-    color: grey;
-}
-
-.community-submenu-item {
-    padding-left: 40px;
-    text-align: left;
-    font-size: small;
-    color: grey;
-}
-
-.education-submenu-item {
-    padding-left: 40px;
-    text-align: left;
-    font-size: small;
-    color: grey;
-}
-
 .bottom-row {
     padding-left: 40px;
     font-size: small;
@@ -52,3 +31,9 @@
 .underline {
     text-decoration: underline;
 }
+
+.social-icon {
+    width: 34px;
+    height: 34px;
+    object-fit: contain; /* This maintains aspect ratio */
+  }
