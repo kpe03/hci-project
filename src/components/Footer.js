@@ -106,7 +106,7 @@ function Footer() {
               </div>
 
               {/* Community section */}
-              <div className="nav-item community-container main-nav-link">
+              <div className="footer-item community-container main-nav-link">
                 <a
                   className="nav-link py-2 me-3 align-self-start"
                   href="/community"
@@ -134,7 +134,7 @@ function Footer() {
                 </div>
               </div>
               {/* Education section */}
-              <div className="nav-item education-container main-nav-link">
+              <div className="footer-item education-container main-nav-link">
                 <a
                   className="nav-link py-2 me-3 align-self-start"
                   href="/education"
@@ -153,15 +153,32 @@ function Footer() {
                   </a>
                 </div>
               </div>
-              <a
-                className="nav-link py-2 align-self-start main-nav-link"
-                href="/contact"
-                role="link"
-              >
-                Connect with Us
-              </a>
-              
-            {/* INSERT THE IMAGES HERE */}
+              <div className="footer-item community-container main-nav-link">
+                <a
+                  className="nav-link py-2 align-self-start main-nav-link"
+                  href="/contact"
+                  role="link"
+                >
+                  Connect with Us
+                </a>
+
+                {/* INSERT THE IMAGES HERE */}
+                <div className="connect-submenu">
+                  <div className="connect-row-1">
+                    <img src="/carousel-images/X.png" alt="X Logo" className="social-icon" />
+                    <img src="/carousel-images/instagram.png" alt="Instagram Logo" className="social-icon" />
+                    <img src="/carousel-images/linkedin.png" alt="Linked Logo" className="social-icon" />
+                    <img src="/carousel-images/youtube.png" alt="Youtube Logo" className="social-icon" />
+                  </div>
+                  <div className="connect-row-2">
+                    <img src="/carousel-images/reddit.png" alt="Reddit Logo" className="social-icon" />
+                    <img src="/carousel-images/mastodon.jpeg" alt="Mastodon Logo" className="social-icon" />
+                    <img src="/carousel-images/flickr.png" alt="Flickr Logo" className="social-icon" />
+                    <img src="/carousel-images/facebook.png" alt="Facebook Logo" className="social-icon" />
+                  </div>
+                </div>
+
+              </div>
 
             </div>
           </div>
@@ -201,7 +218,7 @@ function Footer() {
               href="/"
               role="link"
             >
-              Copyright [INSERT SYMBOL HERE] 2025, ACM, Inc
+              Copyright &#169; 2025, ACM, Inc
             </a>
 
           </div>
