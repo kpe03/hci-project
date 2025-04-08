@@ -1,0 +1,45 @@
+.join-page {
+  padding: 20px;
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.join-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.join-box {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.acm-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.acm-logo {
+  max-width: 100px;
+  height: auto;
+}
+
+.join-acm-text {
+  color: #333;
+  font-size: 24px;
+  margin: 0;
+}
+
+h2 {
+  color: #333;
+  margin-top: 20px;
+}
