@@ -141,3 +141,10 @@ h2 {
 .social-button.microsoft {
   /* Add specific Microsoft styling if desired */
 }
+
+/* Error Message Styling */
+.error-message {
+  color: #dc3545; /* Bootstrap danger color */
+  font-size: 0.85em;
+  margin-top: 4px;
+}
