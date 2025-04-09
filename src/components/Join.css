@@ -14,8 +14,9 @@
 
 .join-box {
   background: white;
-  padding: 30px;
+  padding: 20px 25px;
   border-radius: 8px;
+  border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -25,11 +26,11 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .acm-logo {
-  max-width: 100px;
+  max-width: 60px;
   height: auto;
 }
 
@@ -37,9 +38,106 @@
   color: #333;
   font-size: 24px;
   margin: 0;
+  font-weight: bold;
+}
+
+.input-group {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.create-account-button {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.create-account-button:hover {
+  background-color: #005a9e;
 }
 
 h2 {
   color: #333;
   margin-top: 20px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 12px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.social-login-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  /* No margin-bottom here as it's the end of the form */
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 0.9em;
+  gap: 8px;
+}
+
+.social-button:hover {
+  opacity: 0.9;
+}
+
+.social-button.google {
+  /* Add specific Google styling if desired */
+}
+
+.social-button.apple {
+  /* Add specific Apple styling if desired */
+}
+
+.social-button.microsoft {
+  /* Add specific Microsoft styling if desired */
 }

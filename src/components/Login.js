@@ -1,16 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Login.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Login.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGoogle,
+  faApple,
+  faMicrosoft,
+} from '@fortawesome/free-brands-svg-icons';
 
 const Login = () => {
   return (
     <div className="login-page">
       <div className="breadcrumb">
-        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           Home
-        </Link>{" "}
+        </Link>{' '}
         {`> Log In`}
         <span className="breadcrumb-note"></span>
       </div>
@@ -46,11 +51,28 @@ const Login = () => {
             <button type="submit" className="sign-in-button">
               SIGN IN
             </button>
+
+            <div className="divider">
+              <span>OR</span>
+            </div>
+
+            <div className="social-login-buttons">
+              <button type="button" className="social-button google">
+                <FontAwesomeIcon icon={faGoogle} /> Sign in with Google
+              </button>
+              <button type="button" className="social-button apple">
+                <FontAwesomeIcon icon={faApple} /> Sign in with Apple
+              </button>
+              <button type="button" className="social-button microsoft">
+                <FontAwesomeIcon icon={faMicrosoft} /> Sign in with Microsoft
+              </button>
+            </div>
+
             <p>
-              Don't have an account?{" "}
-              <a href="/register" className="register-link">
+              Don't have an account?{' '}
+              <Link to="/join" className="register-link">
                 Register here
-              </a>
+              </Link>
             </p>
           </form>
         </div>
