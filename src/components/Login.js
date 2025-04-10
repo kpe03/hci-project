@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from './AuthContext';
 import { useState } from 'react';
 import './Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,7 +13,9 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 const Login = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -31,12 +35,11 @@ const Login = () => {
     
     // Mock authentication - in a real app, you would call an API
     if (username === 'user' && password === 'password') {
-      setIsLoggedIn(true);
       console.log("Logged in!");
+      setIsLoggedIn(true);
 
       //navigate to home with logged in status true
-      navigate('/home', { state: { isLoggedIn: true } });
-      setError('');
+      navigate('/');
     } else {
       setError('Invalid username or password');
     }

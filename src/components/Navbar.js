@@ -1,13 +1,17 @@
-import React from "react";
-import { useLocation } from 'react-router-dom';
+import React, { useContext } from "react";
+import { AuthContext } from "./AuthContext"; 
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 function Navbar() {
-  const location = useLocation();
-  const isLoggedIn = location.state?.isLoggedIn || false; // Default to false if not passed
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.removeItem("isLoggedIn");
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
@@ -188,12 +192,40 @@ function Navbar() {
         <div className="d-flex">
           {isLoggedIn ? (
             <div>
-               <button className="btn btn-danger" onClick={() => alert('Logout functionality here!')}>
-              Logout
-            </button>
-            <button className="btn btn-primary ms-2" onClick={() => alert('Bookmark functionality here!')}>
-              Bookmark Page
-            </button>
+            <div className="dropdown">
+              <button
+                className="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="userMenuDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                User Menu
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="userMenuDropdown">
+                <li>
+                  <Link className="dropdown-item" to="/profile">
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/settings">
+                    Settings
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    className="dropdown-item"
+                    onClick={handleLogout}>
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* bookmark button */}
+            <Link to="/bookmarks" className="btn btn-primary ms-2">
+                Bookmark Page
+              </Link>
             </div>
            
           ) : (
