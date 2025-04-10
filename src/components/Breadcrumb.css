@@ -5,6 +5,9 @@
   
   .breadcrumb {
     font-size: 0.9rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
   }
   
   .breadcrumb-item a {
