@@ -11,7 +11,7 @@ function Navbar() {
         {/* Left Side - Logo and Title */}
         <div className="d-flex align-items-center">
           <img
-            src="acm_logo.png"
+            src="./acm.png"
             className="me-2"
             style={{ height: "40px" }}
             alt="ACM logo"

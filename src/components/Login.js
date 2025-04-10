@@ -12,14 +12,6 @@ import {
 const Login = () => {
   return (
     <div className="login-page">
-      <div className="breadcrumb">
-        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          Home
-        </Link>{' '}
-        {`> Log In`}
-        <span className="breadcrumb-note"></span>
-      </div>
-
       <div className="login-container">
         <div className="login-box">
           <h2>

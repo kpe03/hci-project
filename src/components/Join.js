@@ -66,14 +66,6 @@ const Join = () => {
 
   return (
     <div className="join-page">
-      <div className="breadcrumb">
-        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          Home
-        </Link>{' '}
-        {`> Join`}
-        <span className="breadcrumb-note"></span>
-      </div>
-
       <div className="join-container">
         <div className="join-box">
           <div className="acm-logo-container">

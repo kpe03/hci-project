@@ -1,0 +1,29 @@
+.breadcrumb-container {
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .breadcrumb {
+    font-size: 0.9rem;
+  }
+  
+  .breadcrumb-item a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .breadcrumb-item a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  
+  .breadcrumb-item.active {
+    color: #6c757d;
+    font-weight: 500;
+  }
+  
+  /* Custom divider between breadcrumb items */
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d;
+  }
