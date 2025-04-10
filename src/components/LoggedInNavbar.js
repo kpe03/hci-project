@@ -1,14 +1,10 @@
 import React from "react";
-import { useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
-function Navbar() {
-  const location = useLocation();
-  const isLoggedIn = location.state?.isLoggedIn || false; // Default to false if not passed
-
+function LogInNavbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       <div className="container-fluid">
@@ -21,7 +17,7 @@ function Navbar() {
             alt="ACM logo"
           />
           <Link className="navbar-brand" to="/" style={{ fontSize: "15px" }}>
-            Association for Computing Machinery
+            Logged In
           </Link>
         </div>
 
@@ -154,7 +150,13 @@ function Navbar() {
             </li>
 
             {/* Other Sections */}
-            {["Publications", "Chapters", "Conferences", "Education", "More"].map((section) => (
+            {[
+              "Publications",
+              "Chapters",
+              "Conferences",
+              "Education",
+              "More",
+            ].map((section) => (
               <li key={section} className="nav-item dropdown navbar-content">
                 <a
                   className="nav-link dropdown-toggle"
@@ -186,30 +188,11 @@ function Navbar() {
 
         {/* Right Side - Login & Join Buttons */}
         <div className="d-flex">
-          {isLoggedIn ? (
-            <div>
-               <button className="btn btn-danger" onClick={() => alert('Logout functionality here!')}>
-              Logout
-            </button>
-            <button className="btn btn-primary ms-2" onClick={() => alert('Bookmark functionality here!')}>
-              Bookmark Page
-            </button>
-            </div>
-           
-          ) : (
-            <>
-              <Link to="/login" className="btn btn-primary me-2">
-                Login
-              </Link>
-              <a className="btn btn-info" href="/join">
-                Join
-              </a>
-            </>
-          )}
+        
         </div>
       </div>
     </nav>
   );
 }
 
-export default Navbar;
+export default LogInNavbar;

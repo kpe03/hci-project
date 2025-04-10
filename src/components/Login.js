@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import './Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +11,44 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 const Login = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const navigate = useNavigate();  // Initialize useNavigate hook
+
+  // MOCK login functionality 
+  // Login
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(`Username: ${username}, Password: ${password}`);
+    // Basic validation
+    if (!username || !password) {
+      setError('Please enter both username and password');
+      return;
+    }
+    
+    // Mock authentication - in a real app, you would call an API
+    if (username === 'user' && password === 'password') {
+      setIsLoggedIn(true);
+      console.log("Logged in!");
+
+      //navigate to home with logged in status true
+      navigate('/home', { state: { isLoggedIn: true } });
+      setError('');
+    } else {
+      setError('Invalid username or password');
+    }
+  };
+
+  // Logout
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUsername('');
+    setPassword('');
+  };
+
   return (
     <div className="login-page">
       <div className="login-container">
@@ -17,10 +56,13 @@ const Login = () => {
           <h2>
             <FontAwesomeIcon icon={faUser} /> Sign into your ACM Account
           </h2>
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="input-group">
               <label>Username</label>
-              <input type="text" placeholder="Username" />
+              <input type="text" 
+              placeholder="Username" 
+              value={username}
+              onChange={(e) => setUsername(e.target.value)} />
               <a href="/forgot-username" className="forgot-link">
                 Forgot username?
               </a>
@@ -28,7 +70,10 @@ const Login = () => {
 
             <div className="input-group">
               <label>Password</label>
-              <input type="password" placeholder="Password" />
+              <input type="password" 
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}/>
               <div className="password-options">
                 <div className="remember-me">
                   <input type="checkbox" />
