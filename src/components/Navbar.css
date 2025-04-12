@@ -7,6 +7,10 @@ be hard to implement with bootstrap */
     font-weight: bold;
   }
 
+.border-color {
+  border-bottom: 3px solid #2D9CDB;
+}
+
 .titleButton {
     font-size: 20px;
     font-family: "Roboto Condensed", sans-serif;
@@ -18,12 +22,14 @@ be hard to implement with bootstrap */
     height: 50px;
 }
 
+
 .navbar-content {
   padding: 0 15px 0 15px;
 }
 
+
 .dropdown-container{
-  width: 70vw !important;
+  width: max-content !important;
   left: 0 !important;
   right: 0 !important;
   position: absolute !important;
@@ -38,7 +44,29 @@ be hard to implement with bootstrap */
   font-size: 13px;
 }
 
-.dropdown-col-container{
-  padding: 0 -50px 0 -20px;
-  
+.dropdown-container .row {
+  display: inline-flex;
+  align-items: flex-start;
 }
+
+.dropdown-menu {
+  background-color: #d6d6d6 !important;
+  color:#00567D;
+  font-size: 13px;
+}
+.no-wrap {
+  white-space: nowrap;
+}
+
+.nav-link {
+  color: #aaaaaa;
+  font-size: 15px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+.button-style {
+  border-radius: 0px;
+}
+
