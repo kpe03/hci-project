@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext"; 
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import logo from "../assets/images/acm-logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
@@ -10,80 +11,80 @@ function Navbar() {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
 
   const aboutItems = [
-    {label: "About ACM", link: "about/acm"},
-    {label: "ACM Constitution", link: "about/constitution"},
-    {label: "ACM Council", link: "about/council"},
-    {label: "ACM in the News", link: "about/news"},
-    {label: "ACM Updates", link: "about/updates"},
-    {label: "ACM Statements", link: "about/statements"},
-    {label: "ACM's Mission, Vision & Values", link: "about/vision"},
-    {label: "Annual Reports", link: "about/reports"},
-    {label: "Boards & Committees", link: "about/committees"}, 
-    {label: "Bylaws", link: "about/bylaws"},
-    {label: "Code of Ethics", link: "about/ethics"},
-    {label: "Ethics Enforcement", link: "about/enforcement"},
-    {label: "Contact Us", link: "about/contact"},
-    {label: "Governance", link: "about/governance"},
-    {label: "History", link: "about/history"},
-    {label: "Media Center", link: "about/media"},
-    {label: "Past Presidents", link: "about/presidents"},
-    {label: "Complaint Process", link: "about/complaints"},
-    {label: "Report Behavior", link: "about/report"},
-    {label: "Stop Harassment", link: "about/harassment"},
+    {label: "About ACM", link: "/about/acm"},
+    {label: "ACM Constitution", link: "/about/constitution"},
+    {label: "ACM Council", link: "/about/council"},
+    {label: "ACM in the News", link: "/about/news"},
+    {label: "ACM Updates", link: "/about/updates"},
+    {label: "ACM Statements", link: "/about/statements"},
+    {label: "ACM's Mission, Vision & Values", link: "/about/vision"},
+    {label: "Annual Reports", link: "/about/reports"},
+    {label: "Boards & Committees", link: "/about/committees"}, 
+    {label: "Bylaws", link: "/about/bylaws"},
+    {label: "Code of Ethics", link: "/about/ethics"},
+    {label: "Ethics Enforcement", link: "/about/enforcement"},
+    {label: "Contact Us", link: "/about/contact"},
+    {label: "Governance", link: "/about/governance"},
+    {label: "History", link: "/about/history"},
+    {label: "Media Center", link: "/about/media"},
+    {label: "Past Presidents", link: "/about/presidents"},
+    {label: "Complaint Process", link: "/about/complaints"},
+    {label: "Report Behavior", link: "/about/report"},
+    {label: "Stop Harassment", link: "/about/harassment"},
   ];
   /* To create all the links in the dropdown of the Navbar */
-  const publicationItems = [{label: "Digital Library", link: "publications/digital-library"},
-    {label: "CACM", link: "publications/cacm"},
-    {label: "Journals", link: "publications/journals"},
-    {label: "Books", link: "publications/books"},
-    {label: "Conference Proceedings", link: "publications/conference-proceedings"},
-    {label: "Policies", link: "publications/policies"},
-    {label: "Report a Potential Violation", link: "publications/potential-violation"},
-    {label: "Ethics & Plagiarism", link: "publications/ethics-and-plagiarism"},
-    {label: "Publications Board", link: "publications/Publications-Board"},
+  const publicationItems = [{label: "Digital Library", link: "/publications/digital-library"},
+    {label: "CACM", link: "/publications/cacm"},
+    {label: "Journals", link: "/publications/journals"},
+    {label: "Books", link: "/publications/books"},
+    {label: "Conference Proceedings", link: "/publications/conference-proceedings"},
+    {label: "Policies", link: "/publications/policies"},
+    {label: "Report a Potential Violation", link: "/publications/potential-violation"},
+    {label: "Ethics & Plagiarism", link: "/publications/ethics-and-plagiarism"},
+    {label: "Publications Board", link: "/publications/Publications-Board"},
   ];
 
-  const chapterItems = [{label: "About Chapters", link: "chapters/about-chapters"},
-    {label: "Professional Chapters", link: "chapters/professional-chapters"},
-    {label: "Student Chapters", link: "chapters/student-chapters"},
-    {label: "Meetups", link: "chapters/meetups"},
-    {label: "Newsletter", link: "chapters/newsletter"},
-    {label: "Calendar of Local Activities", link: "chapters/calendar-local-activities"},
-    {label: "Distinguished Speakers", link: "chapters/distinguished-speakers"},
-    {label: "Annual Reports", link: "chapters/annual-reports"},
-    {label: "Chapter Policies", link: "chapters/chapter-policies"},
-    {label: "Chapter Administrative Interface", link: "chapters/administrative-interface"},
-  ];
-
-  
-  const confItems = [{label: "About Conferences", link: "conferences/about-conferences"},
-    {label: "Conference Series", link: "conferences/conferences-series"},
-    {label: "Upcoming Conferences", link: "conferences/upcoming-conferences"},
-    {label: "Conference Proceedings", link: "conferences/conference-proceedings"},
-    {label: "Submission Deadlines", link: "conferences/submission-deadlines"},
-    {label: "ACM Author Rights and Permissions", link: "conferences/author-rights-and-permissions"},
-    {label: "Best Paper Awards", link: "conferences/best-paper-awards"},
-    {label: "Volunteer Resources", link: "conferences/volunteer-resources"},
-    {label: "Ethics & Plagiarism", link: "conferences/ethics-and-plagiarism"},
-    {label: "Publications Board", link: "conferences/Publications-Board"},
+  const chapterItems = [{label: "About Chapters", link: "/chapters/about-chapters"},
+    {label: "Professional Chapters", link: "/chapters/professional-chapters"},
+    {label: "Student Chapters", link: "/chapters/student-chapters"},
+    {label: "Meetups", link: "/chapters/meetups"},
+    {label: "Newsletter", link: "/chapters/newsletter"},
+    {label: "Calendar of Local Activities", link: "/chapters/calendar-local-activities"},
+    {label: "Distinguished Speakers", link: "/chapters/distinguished-speakers"},
+    {label: "Annual Reports", link: "/chapters/annual-reports"},
+    {label: "Chapter Policies", link: "/chapters/chapter-policies"},
+    {label: "Chapter Administrative Interface", link: "/chapters/administrative-interface"},
   ];
 
   
-  const edItems = [{label: "About Education", link: "education/about-edcuation"},
-    {label: "Curricula Recommendations", link: "education/curricula-recommendations"},
-    {label: "Affiliated Organizations", link: "education/affiliated-organizations"},
-    {label: "ACM Learning Center", link: "education/acm-learning-center"},
-    {label: "Resources for Educators", link: "education/resources-for-educators"},
-    {label: "Resources for Graduating Students", link: "education/resources-for-graduating-students"},
-    {label: "Education Board and Advisory Committee", link: "education/education-board-and-advisory-committee"},
-    {label: "Reports and Studies", link: "education/reports-and-studies"}
+  const confItems = [{label: "About Conferences", link: "/conferences/about-conferences"},
+    {label: "Conference Series", link: "/conferences/conferences-series"},
+    {label: "Upcoming Conferences", link: "/conferences/upcoming-conferences"},
+    {label: "Conference Proceedings", link: "/conferences/conference-proceedings"},
+    {label: "Submission Deadlines", link: "/conferences/submission-deadlines"},
+    {label: "ACM Author Rights and Permissions", link: "/conferences/author-rights-and-permissions"},
+    {label: "Best Paper Awards", link: "/conferences/best-paper-awards"},
+    {label: "Volunteer Resources", link: "/conferences/volunteer-resources"},
+    {label: "Ethics & Plagiarism", link: "/conferences/ethics-and-plagiarism"},
+    {label: "Publications Board", link: "/conferences/Publications-Board"},
+  ];
+
+  
+  const edItems = [{label: "About Education", link: "/education/about-edcuation"},
+    {label: "Curricula Recommendations", link: "/education/curricula-recommendations"},
+    {label: "Affiliated Organizations", link: "/education/affiliated-organizations"},
+    {label: "ACM Learning Center", link: "/education/acm-learning-center"},
+    {label: "Resources for Educators", link: "/education/resources-for-educators"},
+    {label: "Resources for Graduating Students", link: "/education/resources-for-graduating-students"},
+    {label: "Education Board and Advisory Committee", link: "/education/education-board-and-advisory-committee"},
+    {label: "Reports and Studies", link: "/education/reports-and-studies"}
   ];
 
   const moreItems = [
-    {label: "Awards", link: "awards/about"},
-    {label: "Diversity, Equity, and Inclusion", link: "dei/about"},
-    {label: "Membership", link: "membership/about"},
-    {label: "Special Interest Groups", link: "sig/about"},
+    {label: "Awards", link: "/awards/about"},
+    {label: "Diversity, Equity, and Inclusion", link: "/dei/about"},
+    {label: "Membership", link: "/membership/about"},
+    {label: "Special Interest Groups", link: "/sig/about"},
   ];
   /* -------------------------------------- */
 
@@ -132,7 +133,7 @@ function Navbar() {
         {/* Left Side - Logo and Title */}
         <div className="d-flex align-items-center">
           <img
-            src="./acm.png"
+            src={logo}
             className="me-2"
             style={{ height: "40px" }}
             alt="ACM logo"
