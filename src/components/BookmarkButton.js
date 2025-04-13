@@ -7,18 +7,24 @@ const BookmarkButton = () => {
 
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  // On mount, check if this page is already bookmarked
+  // Check localStorage on path change
   useEffect(() => {
-    const bookmarks = JSON.parse(localStorage.getItem("bookmarkedPages") || "[]");
-    setIsBookmarked(bookmarks.includes(currentPath));
+    const stored = JSON.parse(localStorage.getItem("bookmarkedPaths") || "[]");
+    setIsBookmarked(stored.includes(currentPath));
   }, [currentPath]);
 
   const handleBookmark = () => {
-    const bookmarks = JSON.parse(localStorage.getItem("bookmarkedPages") || "[]");
+    const stored = JSON.parse(localStorage.getItem("bookmarkedPaths") || "[]");
 
-    if (!bookmarks.includes(currentPath)) {
-      const updatedBookmarks = [...bookmarks, currentPath];
-      localStorage.setItem("bookmarkedPages", JSON.stringify(updatedBookmarks));
+    if (stored.includes(currentPath)) {
+      // Remove current path
+      const updated = stored.filter((path) => path !== currentPath);
+      localStorage.setItem("bookmarkedPaths", JSON.stringify(updated));
+      setIsBookmarked(false);
+    } else {
+      // Add current path
+      const updated = [...stored, currentPath];
+      localStorage.setItem("bookmarkedPaths", JSON.stringify(updated));
       setIsBookmarked(true);
     }
   };
@@ -54,7 +60,7 @@ const BookmarkButton = () => {
           <path d="M2 2v13.5l6-3.5 6 3.5V2z" />
         </svg>
       )}
-      Bookmark Page
+      {isBookmarked ? "Bookmarked" : "Bookmark Page"}
     </button>
   );
 };
