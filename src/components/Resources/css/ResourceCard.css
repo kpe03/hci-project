@@ -8,7 +8,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     max-width: 20em;
-    height: 30em;
+    height: 25em;
     margin: 0 auto;
     transition: box-shadow 0.3s ease;
     margin: 5px;
@@ -19,15 +19,18 @@
   }
   
   .resource-icon {
-    height: 3rem;
+    height: 3.5rem;
     object-fit: contain;
     margin-bottom: 0.5rem;
   }
   
   .resource-title {
-    color: #2563eb; /* Tailwind blue-600 */
-    font-weight: 600;
+    color: #2563eb;
+    font-size: 25px;
+    font-weight: 500;
     text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   .resource-title:hover {
@@ -35,8 +38,9 @@
   }
   
   .resource-description {
-    font-size: 0.875rem; /* Tailwind text-sm */
-    color: #374151;      /* Tailwind gray-700 */
+    font-size: 20px;
+    font-weight: 400;
+    color: #374151;
     margin-top: 0.5rem;
   }
   
