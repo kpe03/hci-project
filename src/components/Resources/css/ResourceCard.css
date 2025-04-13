@@ -1,0 +1,42 @@
+.resource-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(231, 231, 231);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 20em;
+    height: 30em;
+    margin: 0 auto;
+    transition: box-shadow 0.3s ease;
+    margin: 5px;
+  }
+  
+  .resource-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .resource-icon {
+    height: 3rem;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+  
+  .resource-title {
+    color: #2563eb; /* Tailwind blue-600 */
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .resource-title:hover {
+    text-decoration: underline;
+  }
+  
+  .resource-description {
+    font-size: 0.875rem; /* Tailwind text-sm */
+    color: #374151;      /* Tailwind gray-700 */
+    margin-top: 0.5rem;
+  }
+  
