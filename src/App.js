@@ -10,7 +10,7 @@ import Profile from './components/Profile';
 import ProfileNavbar from './components/ProfileNavbar';
 import Carousel from './components/Carousel';
 import Breadcrumb from './components/Breadcrumb';
-import BookmarkPage from './components/BookmarkPage';
+import BookmarkPage from './components/Bookmark-Page/BookmarkPage';
 import Join from './components/Join';
 import HomePage from './components/HomePage';
 import { useLocation } from 'react-router-dom';
