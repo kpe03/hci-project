@@ -1,13 +1,17 @@
 import React from "react";
 import UserInfo from "./UserInfo";
-import ProfileOptions from "./ProfileOptions";
+import Services from "./Services";
 import "./Profile.css";
 
 const Profile = () => {
   return (
-    <div className="profile-container">
-      <UserInfo />
-      <ProfileOptions />
+    <div className="profile-page">
+      <main className="profile-main">
+        <div className="profile-container">
+          <UserInfo />
+          <Services />
+        </div>
+      </main>
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import React from "react";
+import "./UserInfo.css";
 
 const UserInfo = () => {
   return (
     <div className="user-info">
-      <p>SERVICES - Full Name</p> {/* Added Full Name Placeholder */}
-      <h2>Client Number: <strong>1234567</strong></h2>
+      <h2><strong>John Doe</strong> (Client_ID: <strong> 1234567</strong>)</h2> {/* Added Full Name Placeholder */}
     </div>
   );
 };
