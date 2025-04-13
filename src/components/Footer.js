@@ -165,19 +165,35 @@ function Footer() {
 
                 {/* INSERT THE IMAGES HERE */}
                 <div className="connect-submenu">
-                  <div className="connect-row-1">
-                    <img src="/footer-images/X.png" alt="X Logo" className="social-icon" />
-                    <img src="/footer-images/instagram.png" alt="Instagram Logo" className="social-icon" />
-                    <img src="/footer-images/linkedin.png" alt="Linked Logo" className="social-icon" />
-                    <img src="/footer-images/youtube.png" alt="Youtube Logo" className="social-icon" />
-                  </div>
-                  <div className="connect-row-2">
-                    <img src="/footer-images/reddit.png" alt="Reddit Logo" className="social-icon" />
-                    <img src="/footer-images/mastodon.png" alt="Mastodon Logo" className="social-icon" />
-                    <img src="/footer-images/flickr.png" alt="Flickr Logo" className="social-icon" />
-                    <img src="/footer-images/facebook.png" alt="Facebook Logo" className="social-icon" />
-                  </div>
-                </div>
+  <div className="connect-row-1">
+    <a href="https://twitter.com/TheOfficialACM" target="_blank" rel="noopener noreferrer">
+      <img src="/footer-images/X.png" alt="X Logo" className="social-icon" />
+    </a>
+    <a href="https://www.instagram.com/theofficialacm/" target="_blank" rel="noopener noreferrer">
+      <img src="/footer-images/instagram.png" alt="Instagram Logo" className="social-icon" />
+    </a>
+    <a href="https://www.linkedin.com/company/association-for-computing-machinery/" target="_blank" rel="noopener noreferrer">
+      <img src="/footer-images/linkedin.png" alt="Linked Logo" className="social-icon" />
+    </a>
+    <a href="https://www.youtube.com/user/TheOfficialACM" target="_blank" rel="noopener noreferrer">
+      <img src="/footer-images/youtube.png" alt="Youtube Logo" className="social-icon" />
+    </a>
+  </div>
+  <div className="connect-row-2">
+    <a href="https://www.reddit.com/r/ACM/" target="_blank" rel="noopener noreferrer">
+      <img src="/footer-images/reddit.png" alt="Reddit Logo" className="social-icon" />
+    </a>
+    <a href="https://mastodon.acm.org/@ACM" target="_blank" rel="noopener noreferrer">
+      <img src="/footer-images/mastodon.png" alt="Mastodon Logo" className="social-icon" />
+    </a>
+    <a href="https://www.flickr.com/photos/theofficialacm" target="_blank" rel="noopener noreferrer">
+      <img src="/footer-images/flickr.png" alt="Flickr Logo" className="social-icon" />
+    </a>
+    <a href="https://www.facebook.com/AssociationForComputingMachinery/" target="_blank" rel="noopener noreferrer">
+      <img src="/footer-images/facebook.png" alt="Facebook Logo" className="social-icon" />
+    </a>
+  </div>
+</div>
 
               </div>
 
