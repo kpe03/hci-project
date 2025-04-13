@@ -1,0 +1,68 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content should expand to push footer down */
+.profile-main {
+  flex: 1;
+}
+
+.profile-container {
+  padding: 2rem;
+}
+
+.user-info {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.profile-options {
+  display: flex;
+  flex-direction: column; /* Stack rows vertically */
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* First row: Two large buttons, each taking half the screen width */
+.row-first {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px; /* Adds spacing between the two buttons */
+}
+
+.row-first .option {
+  flex: 1; /* Each button takes equal space */
+  max-width: 50%; /* Ensures they split the page width */
+  text-align: center;
+}
+
+/* Second row: Three smaller buttons, each taking one-third of total width */
+.row-second {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px; /* Adds spacing between the two buttons */
+}
+
+.row-second .option {
+  flex: 1; /* Ensures equal width */
+  max-width: 33.33%; /* Each takes exactly one-third of the page width */
+  text-align: center;
+}
+
+.option {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option:hover {
+  background: #ddd;
+}
