@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Footer from './components/Footer';
+import Profile from './components/Profile';
 import Carousel from './components/Carousel';
 import Breadcrumb from './components/Breadcrumb';
 import BookmarkPage from './components/BookmarkPage';
@@ -17,9 +18,7 @@ import { AuthProvider, AuthContext } from './components/AuthContext';
 import { useContext } from 'react';
 
 
-const App = () => {
-  const { isLoggedIn } = useContext(AuthContext);
-
+function App() {
   return (
     <Router>
       <div className="App">
@@ -30,6 +29,7 @@ const App = () => {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<Join />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </div>
