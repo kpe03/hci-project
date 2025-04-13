@@ -6,11 +6,6 @@ import { useState } from 'react';
 import './Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import {
-  faGoogle,
-  faApple,
-  faMicrosoft,
-} from '@fortawesome/free-brands-svg-icons';
 
 const Login = () => {
   
@@ -24,24 +19,40 @@ const Login = () => {
 
   // MOCK login functionality 
   // Login
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(`Username: ${username}, Password: ${password}`);
+    setError('');
+    console.log(`Attempting login for Username: ${username}`);
+
     // Basic validation
     if (!username || !password) {
       setError('Please enter both username and password');
       return;
     }
     
-    // Mock authentication - in a real app, you would call an API
-    if (username === 'user' && password === 'password') {
-      console.log("Logged in!");
-      setIsLoggedIn(true);
+    // Call the backend API
+    try {
+      const response = await fetch('http://localhost:3001/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
 
-      //navigate to home with logged in status true
-      navigate('/');
-    } else {
-      setError('Invalid username or password');
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Login successful!", data);
+        setIsLoggedIn(true);
+        navigate('/');
+      } else {
+        setError(data.message || 'Login failed. Please try again.');
+        console.error("Login failed:", data.message);
+      }
+    } catch (err) {
+      console.error('Network or server error during login:', err);
+      setError('Failed to connect to the server. Please try again later.');
     }
   };
 
@@ -88,25 +99,16 @@ const Login = () => {
               </div>
             </div>
 
+            {/* Display login error message */}
+            {error && (
+              <p className="error-message" style={{ textAlign: 'center', marginBottom: '15px' }}>
+                {error}
+              </p>
+            )}
+
             <button type="submit" className="sign-in-button">
               SIGN IN
             </button>
-
-            <div className="divider">
-              <span>OR</span>
-            </div>
-
-            <div className="social-login-buttons">
-              <button type="button" className="social-button google">
-                <FontAwesomeIcon icon={faGoogle} /> Sign in with Google
-              </button>
-              <button type="button" className="social-button apple">
-                <FontAwesomeIcon icon={faApple} /> Sign in with Apple
-              </button>
-              <button type="button" className="social-button microsoft">
-                <FontAwesomeIcon icon={faMicrosoft} /> Sign in with Microsoft
-              </button>
-            </div>
 
             <p>
               Don't have an account?{' '}

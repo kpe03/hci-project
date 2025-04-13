@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import acmLogo from '../assets/images/acm-logo.png';
 import './Join.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGoogle,
-  faApple,
-  faMicrosoft,
-} from '@fortawesome/free-brands-svg-icons';
 
 const Join = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [registrationError, setRegistrationError] = useState('');
 
   // State for validation errors
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [confirmPasswordError, setConfirmPasswordError] = useState('');
+
+  const navigate = useNavigate();
 
   const validateForm = () => {
     let isValid = true;
@@ -51,16 +49,44 @@ const Join = () => {
     return isValid;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setRegistrationError('');
 
     if (validateForm()) {
-      // Handle successful registration logic here
-      console.log('Registration submitted:', { username, email, password });
+      console.log('Form validated, attempting registration for:', username);
       // Add actual registration API call here
-      alert('Account creation successful (simulated)!'); // Placeholder success message
+      try {
+        const response = await fetch('http://localhost:3001/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          // Send username and password to backend
+          body: JSON.stringify({ username, password }), 
+        });
+
+        const data = await response.json(); // Try to parse JSON response
+
+        if (response.status === 201) { // Check for 201 Created status
+          console.log('Registration successful:', data.message);
+          // Optionally show a success message to the user
+          alert('Account created successfully! Please log in.'); 
+          navigate('/login'); // Navigate to login page on success
+        } else {
+          // Handle errors from the server (e.g., username exists)
+          setRegistrationError(data.message || 'Registration failed. Please try again.');
+          console.error('Registration failed:', data.message);
+        }
+      } catch (err) {
+        // Handle network errors
+        console.error('Network or server error during registration:', err);
+        setRegistrationError('Failed to connect to the server. Please try again later.');
+      }
+
     } else {
       console.log('Form validation failed');
+      // Validation errors are already displayed via state variables (emailError, etc.)
     }
   };
 
@@ -125,25 +151,15 @@ const Join = () => {
                 <span className="error-message">{confirmPasswordError}</span>
               )}
             </div>
+            {/* Display general registration error */}
+            {registrationError && (
+              <p className="error-message" style={{ textAlign: 'center', marginTop: '10px' }}>
+                {registrationError}
+              </p>
+            )}
             <button type="submit" className="create-account-button">
               CREATE ACCOUNT
             </button>
-
-            <div className="divider">
-              <span>OR</span>
-            </div>
-
-            <div className="social-login-buttons">
-              <button type="button" className="social-button google">
-                <FontAwesomeIcon icon={faGoogle} /> Sign up with Google
-              </button>
-              <button type="button" className="social-button apple">
-                <FontAwesomeIcon icon={faApple} /> Sign up with Apple
-              </button>
-              <button type="button" className="social-button microsoft">
-                <FontAwesomeIcon icon={faMicrosoft} /> Sign up with Microsoft
-              </button>
-            </div>
           </form>
         </div>
       </div>

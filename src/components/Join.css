@@ -8,7 +8,7 @@
 }
 
 .join-container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -110,7 +110,6 @@ h2 {
   flex-direction: row;
   justify-content: center;
   gap: 10px;
-  /* No margin-bottom here as it's the end of the form */
 }
 
 .social-button {
@@ -130,21 +129,8 @@ h2 {
   opacity: 0.9;
 }
 
-.social-button.google {
-  /* Add specific Google styling if desired */
-}
-
-.social-button.apple {
-  /* Add specific Apple styling if desired */
-}
-
-.social-button.microsoft {
-  /* Add specific Microsoft styling if desired */
-}
-
-/* Error Message Styling */
 .error-message {
-  color: #dc3545; /* Bootstrap danger color */
+  color: #dc3545;
   font-size: 0.85em;
   margin-top: 4px;
 }
