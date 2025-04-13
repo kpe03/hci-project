@@ -11,9 +11,10 @@ function Footer() {
         <div className="row g-0">
           <div className="col-12">
             <a
-              className="nav-link py-3 footer-title"
-              href="/"
-              role="link"
+              className="py-3 footer-title nav-link "
+              //href="/"
+              //role="link"
+
             >
               Association for Computing Machinery
             </a>
@@ -29,9 +30,9 @@ function Footer() {
               {/* About section with its submenu */}
               <div className="nav-item about-container me-3">
                 <a
-                  className="nav-link py-2 main-nav-link"
-                  href="/about"
-                  role="link"
+                  className="main-nav-link py-2 "
+                  //href="/about"
+                  //role="link"
                 >
                   About
                 </a>
@@ -72,9 +73,9 @@ function Footer() {
               {/* Publications section */}
               <div className="footer-item publications-container me-3">
                 <a
-                  className="nav-link py-2 main-nav-link"
-                  href="/publications"
-                  role="link"
+                  className="main-nav-link py-2 "
+                  //href="/publications"
+                  //role="link"
                 >
                   Publications
                 </a>
@@ -106,11 +107,11 @@ function Footer() {
               </div>
 
               {/* Community section */}
-              <div className="footer-item community-container main-nav-link">
+              <div className="footer-item community-container">
                 <a
-                  className="nav-link py-2 me-3 align-self-start"
-                  href="/community"
-                  role="link"
+                  className="main-nav-link py-2 "
+                  //href="/community"
+                  //role="link"
                 >
                   Community
                 </a>
@@ -134,11 +135,11 @@ function Footer() {
                 </div>
               </div>
               {/* Education section */}
-              <div className="footer-item education-container main-nav-link">
+              <div className="footer-item education-container">
                 <a
-                  className="nav-link py-2 me-3 align-self-start"
-                  href="/education"
-                  role="link"
+                  className="main-nav-link py-2 "
+                  //href="/education"
+                  //role="link"
                 >
                   Education
                 </a>
@@ -153,11 +154,11 @@ function Footer() {
                   </a>
                 </div>
               </div>
-              <div className="footer-item community-container main-nav-link">
+              <div className="footer-item community-container">
                 <a
-                  className="nav-link py-2 align-self-start main-nav-link"
-                  href="/contact"
-                  role="link"
+                  className="main-nav-link py-2 "
+                  //href="/contact"
+                  //role="link"
                 >
                   Connect with Us
                 </a>
@@ -165,16 +166,16 @@ function Footer() {
                 {/* INSERT THE IMAGES HERE */}
                 <div className="connect-submenu">
                   <div className="connect-row-1">
-                    <img src="/carousel-images/X.png" alt="X Logo" className="social-icon" />
-                    <img src="/carousel-images/instagram.png" alt="Instagram Logo" className="social-icon" />
-                    <img src="/carousel-images/linkedin.png" alt="Linked Logo" className="social-icon" />
-                    <img src="/carousel-images/youtube.png" alt="Youtube Logo" className="social-icon" />
+                    <img src="/footer-images/X.png" alt="X Logo" className="social-icon" />
+                    <img src="/footer-images/instagram.png" alt="Instagram Logo" className="social-icon" />
+                    <img src="/footer-images/linkedin.png" alt="Linked Logo" className="social-icon" />
+                    <img src="/footer-images/youtube.png" alt="Youtube Logo" className="social-icon" />
                   </div>
                   <div className="connect-row-2">
-                    <img src="/carousel-images/reddit.png" alt="Reddit Logo" className="social-icon" />
-                    <img src="/carousel-images/mastodon.jpeg" alt="Mastodon Logo" className="social-icon" />
-                    <img src="/carousel-images/flickr.png" alt="Flickr Logo" className="social-icon" />
-                    <img src="/carousel-images/facebook.png" alt="Facebook Logo" className="social-icon" />
+                    <img src="/footer-images/reddit.png" alt="Reddit Logo" className="social-icon" />
+                    <img src="/footer-images/mastodon.png" alt="Mastodon Logo" className="social-icon" />
+                    <img src="/footer-images/flickr.png" alt="Flickr Logo" className="social-icon" />
+                    <img src="/footer-images/facebook.png" alt="Facebook Logo" className="social-icon" />
                   </div>
                 </div>
 
@@ -210,13 +211,12 @@ function Footer() {
               href="/"
               role="link"
             >
-              Social Media Policy
+              Social Media Policy 
             </a>
 
             <a
               className="nav-link py-3 copyright me-3"
-              href="/"
-              role="link"
+
             >
               Copyright &#169; 2025, ACM, Inc
             </a>

@@ -1,12 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
 .footer-title {
-    text-align: left;
-    padding-left: 15px;
-    color: white;
-    font-size: large;
-    font-weight: bold;
+    text-align: left !important;
+    padding-left: 15px !important;
+    color: white !important;
+    font-size: x-large !important;
+    font-weight: bold !important;
+    font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 .main-nav-link {
+    text-align: left;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    
+}
+
+.nav-link {
     font-weight: bold;
 }
 
@@ -15,25 +26,32 @@
     font-weight: bold;
 }
 
+.about-container, .publications-container, .community-container, .education-container {
+    padding-left: 40px; 
+}
+
+
 .about-submenu, .publications-submenu, .community-submenu, .education-submenu, .connect-submenu {
-    padding-left: 40px;
+    padding-left: 10px;
     text-align: left;
     font-size: small;
     font-weight: normal;
-    color: grey;
+    color: grey !important;
 }
 .bottom-row {
     padding-left: 40px;
     font-size: small;
-    color: white;
+    color: white !important;
 }
 
-.underline {
-    text-decoration: underline;
+.nav-link.underline {
+    text-decoration: underline !important;
 }
 
 .social-icon {
     width: 34px;
     height: 34px;
     object-fit: contain; /* This maintains aspect ratio */
+    margin: 0 15px;
+    margin-top: 15px;
   }
