@@ -3,6 +3,7 @@ import { AuthContext } from "./AuthContext";
 import { useState, useEffect } from "react";
 import Carousel from "./Carousel";
 import Resources from "./Resources/ResourcesSection";
+import News from "./News/NewsSection";
 
 const HomePage = () => {
     const { isLoggedIn } = useContext(AuthContext);
@@ -17,7 +18,7 @@ const HomePage = () => {
       <>
         <Carousel />
         <Resources />
-        <p>Home page</p>
+        <News />
         </>
     </div>
   );
