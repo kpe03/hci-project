@@ -17,7 +17,6 @@ const RecentlyBookmarked = () => {
 
   return (
     <div>
-      <h2 className="bookmark-panel-heading">Recently Bookmarked →</h2>
       <div className="space-y-3">
         {recentItems.map((item, index) => (
           <div key={index} className="recent-bookmark">

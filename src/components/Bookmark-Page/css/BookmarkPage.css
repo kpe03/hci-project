@@ -1,24 +1,37 @@
 .bookmark-page-container {
-    padding: 1.5rem;
-  }
-  
-  .bookmark-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Flex layout row for panels */
-  .bookmark-panels-container {
-    display: flex;
-    flex-direction: row;
-    gap: 2.5rem; /* equivalent to Tailwind gap-10 */
-    flex-wrap: wrap; /* allows responsive wrap if needed */
-  }
-  
-  /* Panel styling */
-  .bookmark-panel {
-    flex: 1;
-    min-width: 300px;
-  }
-  
+  padding: 2rem;
+  max-width: 75%;
+  margin-left: 100px;
+  text-align: left;
+}
+
+.bookmark-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.bookmark-panels-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.bookmark-section-header {
+  font-size: 2.25rem;
+  font-weight: 600;
+  border-bottom: 1px solid #2D9CDB;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.bookmark-panel {
+  width: 100%;
+}
+
+.bookmark-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}

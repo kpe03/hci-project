@@ -1,4 +1,3 @@
-// src/pages/BookmarkPage.jsx
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import BookmarksList from "./BookmarkList";
@@ -17,16 +16,25 @@ const BookmarkPage = () => {
 
   return (
     <div className="bookmark-page-container">
-      <h1 className="bookmark-title">My Bookmarks</h1>
+     
 
       <div className="bookmark-panels-container">
         <div className="bookmark-panel">
+          <h2 className="bookmark-section-header">My Bookmarks</h2>
           <BookmarksList />
         </div>
+
         <div className="bookmark-panel">
+          <h2 className="bookmark-section-header">Recently Bookmarked</h2>
           <RecentlyBookmarked />
         </div>
       </div>
+
+      {!isLoggedIn && (
+        <p className="mt-10 text-red-500">
+          You must be logged in to save and sync bookmarks.
+        </p>
+      )}
     </div>
   );
 };

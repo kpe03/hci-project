@@ -4,27 +4,28 @@ import { useLocation } from "react-router-dom";
 const BookmarkButton = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const pageTitle = document.title || "Untitled Page";
 
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  // Check localStorage on path change
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("bookmarkedPaths") || "[]");
-    setIsBookmarked(stored.includes(currentPath));
+    const stored = JSON.parse(localStorage.getItem("bookmarkedPages") || "[]");
+    const alreadyExists = stored.some((b) => b.path === currentPath);
+    setIsBookmarked(alreadyExists);
   }, [currentPath]);
 
   const handleBookmark = () => {
-    const stored = JSON.parse(localStorage.getItem("bookmarkedPaths") || "[]");
+    const stored = JSON.parse(localStorage.getItem("bookmarkedPages") || "[]");
 
-    if (stored.includes(currentPath)) {
-      // Remove current path
-      const updated = stored.filter((path) => path !== currentPath);
-      localStorage.setItem("bookmarkedPaths", JSON.stringify(updated));
+    const alreadyExists = stored.some((b) => b.path === currentPath);
+
+    if (alreadyExists) {
+      const updated = stored.filter((b) => b.path !== currentPath);
+      localStorage.setItem("bookmarkedPages", JSON.stringify(updated));
       setIsBookmarked(false);
     } else {
-      // Add current path
-      const updated = [...stored, currentPath];
-      localStorage.setItem("bookmarkedPaths", JSON.stringify(updated));
+      const updated = [...stored, { path: currentPath, title: pageTitle }];
+      localStorage.setItem("bookmarkedPages", JSON.stringify(updated));
       setIsBookmarked(true);
     }
   };
@@ -36,27 +37,11 @@ const BookmarkButton = () => {
       style={{ whiteSpace: "nowrap" }}
     >
       {isBookmarked ? (
-        // Filled bookmark
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          viewBox="0 0 16 16"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
           <path d="M2 2v13.5l6-3.5 6 3.5V2z" />
         </svg>
       ) : (
-        // Empty bookmark outline
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          viewBox="0 0 16 16"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 16 16">
           <path d="M2 2v13.5l6-3.5 6 3.5V2z" />
         </svg>
       )}
