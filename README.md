@@ -11,21 +11,21 @@ This is a redesign of the https://www.acm.org/ website, with improvemments to fe
 
 # Project Structure
 |- backend <br> 
-    |- package-lock.json
-    |- package.json
-    |- server.js
-|- public
-    |-... / All images in project are here
-|- src
-    |- components
-        |-... / All react components js and css files are here
-    |- App.css
-    |- App.js
-    |- index.js
-|- .gitignore
-|- README.md
-|- package-lock.json
-|- package.json
+    |- package-lock.json <br> 
+    |- package.json <br> 
+    |- server.js <br> 
+|- public <br> 
+    |-... / All images in project are here <br> 
+|- src <br> 
+    |- components <br> 
+        |-... / All react components js and css files are here <br> 
+    |- App.css <br> 
+    |- App.js <br> 
+    |- index.js <br> 
+|- .gitignore <br> 
+|- README.md <br> 
+|- package-lock.json <br> 
+|- package.json <br> 
 
 # Requirements
 - Node.js (v14 or later recommended)
