@@ -22,12 +22,10 @@ const BookmarkButton = ({ onClick }) => {
       const updated = stored.filter((b) => b.path !== currentPath);
       localStorage.setItem("bookmarkedPages", JSON.stringify(updated));
       setIsBookmarked(false);
-      // ❌ Don't show modal here
     } else {
       const updated = [...stored, { path: currentPath, title: pageTitle }];
       localStorage.setItem("bookmarkedPages", JSON.stringify(updated));
       setIsBookmarked(true);
-      // ✅ Only trigger modal if it's a new bookmark
       if (onClick) onClick();
     }
   };

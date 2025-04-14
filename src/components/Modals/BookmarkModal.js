@@ -57,7 +57,7 @@ const BookmarkModal = ({ show, onClose }) => {
       if (index === -1) {
         current.push(newBookmark);
       } else {
-        current[index] = newBookmark; // 🧠 Overwrite the old version
+        current[index] = newBookmark;
       }
   
       localStorage.setItem("bookmarkedPages", JSON.stringify(current));
