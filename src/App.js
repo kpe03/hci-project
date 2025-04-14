@@ -20,27 +20,35 @@ import { useContext } from 'react';
 import { useMatch } from 'react-router-dom';
 
 
-const App = () => {
+const AppContent = () => {
   const { isLoggedIn } = useContext(AuthContext);
-  const isProfilePage = window.location.pathname.startsWith('/profile');
-
+  const location = useLocation();
+  const isProfilePage = location.pathname.startsWith('/profile');
 
   return (
-    <Router>
-      <div className="App">
-        {isProfilePage ? <ProfileNavbar /> : <Navbar />}
-        <Breadcrumb />
-        <Routes>
-          <Route path="/bookmarks" element={<BookmarkPage/>}/>
-          <Route path="/" element={<HomePage/>}/>
-          <Route path="/login" element={<Login />} />
-          <Route path="/join" element={<Join />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <div className="App">
+      {isProfilePage ? <ProfileNavbar /> : <Navbar />}
+      <Breadcrumb />
+      <Routes>
+        <Route path="/bookmarks" element={<BookmarkPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/join" element={<Join />} />
+        <Route path="/profile/*" element={<Profile />} />
+      </Routes>
+      <Footer />
+    </div>
   );
-}
+};
+
+const App = () => {
+  return (
+    <AuthProvider>
+      <Router>
+        <AppContent />
+      </Router>
+    </AuthProvider>
+  );
+};
 
 export default App;

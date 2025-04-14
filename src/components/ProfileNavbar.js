@@ -1,14 +1,16 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext"; 
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import "./ProfileNavbar.css";
 import logo from "../assets/images/acm-logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import { useNavigate } from 'react-router-dom';
 
 function ProfileNavbar() {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+  const navigate = useNavigate();
 
   const AwardsAndRecognitionItems = [
     {label: "How to Nominate: ACM Fellows", link: "/profile/awards&recgognition/nominate_acm_fellows"},
@@ -45,6 +47,7 @@ function ProfileNavbar() {
   const handleLogout = () => {
     setIsLoggedIn(false);
     localStorage.removeItem("isLoggedIn");
+    navigate('/');
   };
 
   const handleNavCollapse = () => {
@@ -137,20 +140,23 @@ function ProfileNavbar() {
                 <Link className="btn btn-outline-light mb-2" to="/settings">
                   Settings
                 </Link>
+                <Link className="btn btn-outline-light mb-2" to="/bookmarks">
+                  Bookmarks
+                </Link>
                 <button
                   className="btn btn-danger"
                   onClick={handleLogout}>
-                  Log Out
+                  Logout
                 </button>
               </div>
             ) : (
               <div className="d-flex flex-column w-100">
-                <Link to="/profile" className="btn btn-primary mb-2">
-                  Profile
+                <Link to="/login" className="btn btn-primary mb-2">
+                  Login
                 </Link>
-                <Link to="/" className="btn btn-info mb-2">
-                  Log Out
-                </Link>
+                <a className="btn btn-info" href="/join">
+                  Join
+                </a>
               </div>
             )}
           </div>
@@ -184,20 +190,25 @@ function ProfileNavbar() {
                     <button
                       className="dropdown-item"
                       onClick={handleLogout}>
-                      Log Out
+                      Logout
                     </button>
                   </li>
                 </ul>
               </div>
+
+              <Link to="/bookmarks" className="btn btn-primary ms-2"
+                style={{ whiteSpace: "nowrap" }}>
+                Bookmark Page
+              </Link>
             </div>
           ) : (
             <>
               <Link to="/login" className="btn btn-primary me-2 rounded-1">
-                Profile
+                Login
               </Link>
-              <Link to="/" className="btn btn-info mb-2">
-                Log Out
-              </Link>
+              <a className="btn btn-info rounded-1" href="/join">
+                Join
+              </a>
             </>
           )}
         </div>
@@ -207,3 +218,11 @@ function ProfileNavbar() {
 }
 
 export default ProfileNavbar;
+
+
+
+
+
+
+
+

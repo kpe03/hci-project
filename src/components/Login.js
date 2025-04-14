@@ -106,11 +106,10 @@ const Login = () => {
               </p>
             )}
 
-            <Link to='/profile'>
-              <button type="submit" className="sign-in-button">
-                SIGN IN
-              </button>
-            </Link>
+            
+            <button type="submit" className="sign-in-button">
+              SIGN IN
+            </button>
             <p>
               Don't have an account?{' '}
               <Link to="/join" className="register-link">
