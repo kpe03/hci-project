@@ -12,6 +12,8 @@ import Breadcrumb from './components/Breadcrumb';
 import BookmarkPage from './components/Bookmark-Page/BookmarkPage';
 import Join from './components/Join';
 import HomePage from './components/HomePage';
+import ForgotUsernamePage from './components/ForgotUsernamePage';
+import ForgotPasswordPage from './components/ForgotPasswordPage';
 import { AuthProvider, AuthContext } from './components/AuthContext';
 import { useContext } from 'react';
 import BookmarkModal from './components/Modals/BookmarkModal';
@@ -37,6 +39,8 @@ const AppContent = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<Join />} />
           <Route path="/profile/*" element={<Profile />} />
+          <Route path="/forgot-username" element={<ForgotUsernamePage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         </Routes>
         <BookmarkModal show={showModal} onClose={handleCloseModal} />
       </div>

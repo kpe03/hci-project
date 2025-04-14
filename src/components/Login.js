@@ -77,9 +77,9 @@ const Login = () => {
               placeholder="Username" 
               value={username}
               onChange={(e) => setUsername(e.target.value)} />
-              <a href="/forgot-username" className="forgot-link">
+              <Link to="/forgot-username" className="forgot-link">
                 Forgot username?
-              </a>
+              </Link>
             </div>
 
             <div className="input-group">
@@ -88,9 +88,9 @@ const Login = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}/>
-              <a href="/forgot-password" className="forgot-link">
+              <Link to="/forgot-password" className="forgot-link">
                 Forgot password?
-              </a>
+              </Link>
             </div>
 
             {/* Display login error message */}

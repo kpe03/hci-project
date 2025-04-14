@@ -19,6 +19,12 @@
   margin: 0 auto;
 }
 
+/* Add styles for forgot password/username pages */
+.forgot-container {
+  max-width: 450px; /* Make this container smaller */
+  margin: 0 auto;
+}
+
 .login-box {
   background: #fff;
   padding: 30px;
