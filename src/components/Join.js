@@ -96,7 +96,7 @@ const Join = () => {
         <div className="join-box">
           <div className="acm-logo-container">
             <img src={acmLogo} alt="ACM Logo" className="acm-logo" />
-            <h2 className="join-acm-text">Join ACM / Create Account</h2>
+            <h2 className="join-acm-text">Create An Account</h2>
           </div>
           <form onSubmit={handleSubmit}>
             <div className="input-group">
