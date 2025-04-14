@@ -40,6 +40,14 @@ const Resources = () => {
             <ResourceCard key={idx} {...res} />
           ))}
         </div>
+        <div className="resource-footer">
+        <a
+          className="resource-see-more"
+          href="https://learning.acm.org/resources"
+          role="link">
+          See more resources
+        </a>
+      </div>
       </div>
     );
   };

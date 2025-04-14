@@ -200,10 +200,10 @@ function Navbar({onBookmarkClick}) {
               </div>
             ) : (
               <div className="d-flex flex-column w-100">
-                <Link to="/login" className="btn btn-primary mb-2">
+                <Link to="/login" className="btn btn-outline-light mb-2">
                   Login
                 </Link>
-                <a className="btn btn-info" href="/join">
+                <a className="btn btn-outline-info" href="/join">
                   Join
                 </a>
               </div>
@@ -254,10 +254,10 @@ function Navbar({onBookmarkClick}) {
             </div>
           ) : (
             <>
-              <Link to="/login" className="btn btn-primary me-2 rounded-1">
+              <Link to="/login" className="btn btn-outline-light me-2 rounded-1">
                 Login
               </Link>
-              <a className="btn btn-info rounded-1" href="/join">
+              <a className="btn btn-outline-light rounded-1" href="/join">
                 Join
               </a>
             </>
