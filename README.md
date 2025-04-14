@@ -11,7 +11,7 @@ This is a redesign of the https://www.acm.org/ website, with improvemments to fe
 
 # Project Structure
 |- backend <br> 
-    |- package-lock.json <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|- package-lock.json <br> 
     |- package.json <br> 
     |- server.js <br> 
 |- public <br> 
