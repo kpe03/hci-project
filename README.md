@@ -13,19 +13,19 @@ This is a redesign of the https://www.acm.org/ website, with improvemments to fe
 |- backend <br> 
  &nbsp;&nbsp;&nbsp;&nbsp;|- package-lock.json <br> 
  &nbsp;&nbsp;&nbsp;&nbsp;|- package.json <br> 
- &nbsp;&nbsp;&nbsp;&nbsp;|- server.js / ### Node.js/Express server handling backend logic and API routes <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;|- server.js // Node.js/Express server handling backend logic and API routes <br>
 |- public <br> 
- &nbsp;&nbsp;&nbsp;&nbsp;|-... / ### Static assets (like images and favicons) that get served directly <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|-... //Static assets (like images and favicons) that get served directly <br> 
 |- src <br> 
  &nbsp;&nbsp;&nbsp;&nbsp;|- components <br> 
- &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;|-... /  ### Contains all reusable React components (.js/.css files) <br> 
- &nbsp;&nbsp;&nbsp;&nbsp;|- App.css ### Styling for the main App component <br> 
- &nbsp;&nbsp;&nbsp;&nbsp;|- App.js ### Root component of application <br> 
- &nbsp;&nbsp;&nbsp;&nbsp;|- index.js ### Entry point that renders the App component into the DOM<br> 
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;|-... //Contains all reusable React components (.js/.css files) <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|- App.css // Styling for the main App component <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|- App.js // Root component of application <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|- index.js // Entry point that renders the App component into the DOM <br> 
 |- .gitignore <br> 
-|- README.md ### Project documentation and usage instructions <br>
-|- package-lock.json <br>  ### Auto-generated file that locks the dependency tree <br>
-|- package.json ### Lists frontend project dependencies and scripts <br> 
+|- README.md // Project documentation and usage instructions <br>
+|- package-lock.json // Auto-generated file that locks the dependency tree <br><br>
+|- package.json // Lists frontend project dependencies and scripts <br> 
  
 # Requirements
 - Node.js (v14 or later recommended)
