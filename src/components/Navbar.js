@@ -35,11 +35,12 @@ function Navbar({onBookmarkClick}) {
     {label: "Stop Harassment", link: "/about/harassment"},
   ];
   /* To create all the links in the dropdown of the Navbar */
-  const publicationItems = [{label: "Digital Library", link: "/publications/digital-library"},
+  const publicationItems = [
+    {label: "Digital Library", link: "/publications/digital-library"},
     {label: "CACM", link: "/publications/cacm"},
     {label: "Journals", link: "/publications/journals"},
     {label: "Books", link: "/publications/books"},
-    {label: "Conference Proceedings", link: "/publications/conference-proceedings"},
+    {label: "ACM Conference Proceedings", link: "/publications/acm-conference-proceedings"},
     {label: "Policies", link: "/publications/policies"},
     {label: "Report a Potential Violation", link: "/publications/potential-violation"},
     {label: "Ethics & Plagiarism", link: "/publications/ethics-and-plagiarism"},
