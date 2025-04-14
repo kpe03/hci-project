@@ -9,6 +9,24 @@ This is a redesign of the https://www.acm.org/ website, with improvemments to fe
 - HTML & CSS – Markup and styling
 - Bootstrap – Styling Library
 
+# Project Structure
+|- backend
+    |- package-lock.json
+    |- package.json
+    |- server.js
+|- public
+    |-... / All images in project are here
+|- src
+    |- components
+        |-... / All react components js and css files are here
+    |- App.css
+    |- App.js
+    |- index.js
+|- .gitignore
+|- README.md
+|- package-lock.json
+|- package.json
+
 # Requirements
 - Node.js (v14 or later recommended)
 - npm (comes with Node.js)
