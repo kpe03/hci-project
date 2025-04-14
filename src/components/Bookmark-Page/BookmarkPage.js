@@ -29,12 +29,6 @@ const BookmarkPage = () => {
           <RecentlyBookmarked />
         </div>
       </div>
-
-      {!isLoggedIn && (
-        <p className="mt-10 text-red-500">
-          You must be logged in to save and sync bookmarks.
-        </p>
-      )}
     </div>
   );
 };
