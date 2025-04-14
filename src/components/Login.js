@@ -89,10 +89,6 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}/>
               <div className="password-options">
-                <div className="remember-me">
-                  <input type="checkbox" />
-                  <label>Remember me</label>
-                </div>
                 <a href="/forgot-password" className="forgot-link">
                   Forgot password?
                 </a>
