@@ -5,3 +5,31 @@
     text-align: left;
     padding-left: 18rem;
   }
+
+  .news-section {
+    padding: 1.5rem;
+  }
+
+  .news-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .news-footer {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 18rem; /* Match the heading's padding */
+    margin-top: 20px;
+  }
+  
+  .news-see-more {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    color: #2D9CDB;
+    text-decoration: underline;
+  }
