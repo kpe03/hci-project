@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const BookmarkButton = () => {
+const BookmarkButton = ({ onClick }) => {
   const location = useLocation();
   const currentPath = location.pathname;
   const pageTitle = document.title || "Untitled Page";
@@ -16,7 +16,6 @@ const BookmarkButton = () => {
 
   const handleBookmark = () => {
     const stored = JSON.parse(localStorage.getItem("bookmarkedPages") || "[]");
-
     const alreadyExists = stored.some((b) => b.path === currentPath);
 
     if (alreadyExists) {
@@ -28,6 +27,9 @@ const BookmarkButton = () => {
       localStorage.setItem("bookmarkedPages", JSON.stringify(updated));
       setIsBookmarked(true);
     }
+
+    // 👉 Trigger modal open if onClick is provided
+    if (onClick) onClick();
   };
 
   return (

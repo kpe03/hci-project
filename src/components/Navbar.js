@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import BookmarkButton from "./BookmarkButton";
 
-function Navbar() {
+function Navbar({onBookmarkClick}) {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
 
@@ -249,7 +249,7 @@ function Navbar() {
                 </ul>
               </div>
 
-              <BookmarkButton />
+              <BookmarkButton onClick={onBookmarkClick}/>
             </div>
           ) : (
             <>

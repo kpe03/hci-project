@@ -19,25 +19,31 @@ import { AuthProvider, AuthContext } from './components/AuthContext';
 import { useContext } from 'react';
 import { useMatch } from 'react-router-dom';
 
+import BookmarkModal from './components/Modals/BookmarkModal'
 
 const AppContent = () => {
   const { isLoggedIn } = useContext(AuthContext);
-  const location = useLocation();
-  const isProfilePage = location.pathname.startsWith('/profile');
+  const [showModal, setShowModal] = useState(false);
+
+  // Open/close modal handler
+  const handleOpenModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
 
   return (
-    <div className="App">
-      {isProfilePage ? <ProfileNavbar /> : <Navbar />}
-      <Breadcrumb />
-      <Routes>
-        <Route path="/bookmarks" element={<BookmarkPage />} />
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/join" element={<Join />} />
-        <Route path="/profile/*" element={<Profile />} />
-      </Routes>
-      <Footer />
-    </div>
+      <div className="App">
+        <Navbar onBookmarkClick={handleOpenModal}/>
+        <Breadcrumb />
+        <Routes>
+          <Route path="/bookmarks" element={<BookmarkPage/>}/>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/join" element={<Join />} />
+        </Routes>
+
+        <BookmarkModal show={showModal} onClose={handleCloseModal} />
+        
+        <Footer />
+      </div>
   );
 };
 
