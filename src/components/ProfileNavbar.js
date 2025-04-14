@@ -6,8 +6,9 @@ import logo from "../assets/images/acm-logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { useNavigate } from 'react-router-dom';
+import BookmarkButton from "./BookmarkButton";
 
-function ProfileNavbar() {
+function ProfileNavbar({onBookmarkClick}) {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const navigate = useNavigate();
@@ -187,6 +188,11 @@ function ProfileNavbar() {
                     </Link>
                   </li>
                   <li>
+                    <Link className="dropdown-item" to="/bookmarks">
+                      My Bookmarks
+                    </Link>
+                  </li>
+                  <li>
                     <button
                       className="dropdown-item"
                       onClick={handleLogout}>
@@ -196,10 +202,7 @@ function ProfileNavbar() {
                 </ul>
               </div>
 
-              <Link to="/bookmarks" className="btn btn-primary ms-2"
-                style={{ whiteSpace: "nowrap" }}>
-                Bookmark Page
-              </Link>
+              <BookmarkButton onClick={onBookmarkClick}/>
             </div>
           ) : (
             <>

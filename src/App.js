@@ -36,7 +36,7 @@ const AppContent = () => {
   return (
 
       <div className="App">
-        {isProfilePage ? <ProfileNavbar /> : <Navbar onBookmarkClick={handleOpenModal}/>}
+        {isProfilePage ? <ProfileNavbar onBookmarkClick={handleOpenModal}/> : <Navbar onBookmarkClick={handleOpenModal}/>}
         <Breadcrumb />
         <Routes>
           <Route path="/publications/acm-conference-proceedings" element={<Publications />} />
