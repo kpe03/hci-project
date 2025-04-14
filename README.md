@@ -12,16 +12,16 @@ This is a redesign of the https://www.acm.org/ website, with improvemments to fe
 # Project Structure
 |- backend <br> 
  &nbsp;&nbsp;&nbsp;&nbsp;|- package-lock.json <br> 
-    |- package.json <br> 
-    |- server.js <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|- package.json <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|- server.js <br> 
 |- public <br> 
-    |-... / All images in project are here <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|-... / All images in project are here <br> 
 |- src <br> 
-    |- components <br> 
-        |-... / All react components js and css files are here <br> 
-    |- App.css <br> 
-    |- App.js <br> 
-    |- index.js <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|- components <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;|-... / All react components js and css files are here <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|- App.css <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|- App.js <br> 
+ &nbsp;&nbsp;&nbsp;&nbsp;|- index.js <br> 
 |- .gitignore <br> 
 |- README.md <br> 
 |- package-lock.json <br> 
