@@ -34,18 +34,37 @@ const BookmarkModal = ({ show, onClose }) => {
   if (!show) return null;
 
   const handleBookmark = () => {
+    if (!selectedFolder) {
+      alert("Hold up — folder not ready yet. Try again.");
+      return;
+    }
+  
     const current = JSON.parse(localStorage.getItem("bookmarkedPages") || "[]");
-    const exists = current.some((b) => b.path === location.pathname);
-    if (!exists) {
-      current.push({
+  
+    const index = current.findIndex((b) => b.path === location.pathname);
+  
+    // Replace if it doesn't exist or if existing entry is missing folder
+    if (index === -1 || !current[index].folder) {
+      const newBookmark = {
         path: location.pathname,
         title: pageTitle,
         folder: selectedFolder,
-      });
+      };
+  
+      if (index === -1) {
+        current.push(newBookmark);
+      } else {
+        current[index] = newBookmark; // 🧠 Overwrite the old version
+      }
+  
       localStorage.setItem("bookmarkedPages", JSON.stringify(current));
+      window.dispatchEvent(new Event("bookmarks-updated"));
     }
+  
     onClose();
   };
+  
+  
 
   return (
     <div className="modal-backdrop">

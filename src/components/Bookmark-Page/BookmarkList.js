@@ -7,14 +7,17 @@ const BookmarkList = () => {
   const [folders, setFolders] = useState(["Publications"]);
 
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("bookmarkedPages") || "[]");
+    // Load bookmarks and folders from localStorage
+    const storedBookmarks = JSON.parse(localStorage.getItem("bookmarkedPages") || "[]");
+    const storedFolders = JSON.parse(localStorage.getItem("bookmarkFolders") || '["Publications"]');
 
-    // Filter out empty/invalid entries
-    const cleaned = stored.filter(
+    // Clean invalid bookmarks
+    const cleaned = storedBookmarks.filter(
       (b) => b && typeof b === "object" && b.path && b.title
     );
 
     setBookmarks(cleaned);
+    setFolders(storedFolders);
   }, []);
 
   const handleAddFolder = () => {
@@ -22,10 +25,9 @@ const BookmarkList = () => {
     if (newTitle && newTitle.trim() !== "") {
       const updatedFolders = [...folders, newTitle.trim()];
       setFolders(updatedFolders);
-      localStorage.setItem("bookmarkFolders", JSON.stringify(updatedFolders)); // 👈 Save folders
+      localStorage.setItem("bookmarkFolders", JSON.stringify(updatedFolders));
     }
   };
-  
 
   return (
     <div>
@@ -45,11 +47,12 @@ const BookmarkList = () => {
               <div style={{ fontSize: "20px" }}>{folder}</div>
             </div>
 
-            {/* Display bookmarks only under "My Publications" */}
-            {folder === "My Publications" && (
-              <div className="ml-6 space-y-1 text-sm text-gray-700">
-                {bookmarks.length > 0 ? (
-                  bookmarks.map((b, i) => (
+            {/* Show only bookmarks assigned to this folder */}
+            <div className="ml-6 space-y-1 text-sm text-gray-700">
+              {bookmarks.filter(b => b.folder === folder).length > 0 ? (
+                bookmarks
+                  .filter(b => b.folder === folder)
+                  .map((b, i) => (
                     <div key={i}>
                       →{" "}
                       <Link to={b.path} className="hover:underline text-blue-700">
@@ -57,11 +60,10 @@ const BookmarkList = () => {
                       </Link>
                     </div>
                   ))
-                ) : (
-                  <div className="italic text-gray-400">No bookmarks yet</div>
-                )}
-              </div>
-            )}
+              ) : (
+                <div className="italic text-gray-400">No bookmarks yet</div>
+              )}
+            </div>
           </div>
         ))}
 
