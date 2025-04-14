@@ -23,6 +23,9 @@ import BookmarkModal from './components/Modals/BookmarkModal'
 
 const AppContent = () => {
   const { isLoggedIn } = useContext(AuthContext);
+  const location = useLocation();
+  const isProfilePage = location.pathname.startsWith('/profile');
+
   const [showModal, setShowModal] = useState(false);
 
   // Open/close modal handler
@@ -31,13 +34,14 @@ const AppContent = () => {
 
   return (
       <div className="App">
-        <Navbar onBookmarkClick={handleOpenModal}/>
+        {isProfilePage ? <ProfileNavbar /> : <Navbar onBookmarkClick={handleOpenModal}/>}
         <Breadcrumb />
         <Routes>
           <Route path="/bookmarks" element={<BookmarkPage/>}/>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<Join />} />
+          <Route path="/profile/*" element={<Profile />} />
         </Routes>
 
         <BookmarkModal show={showModal} onClose={handleCloseModal} />
