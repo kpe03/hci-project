@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Footer from './components/Footer';
 import Profile from './components/Profile';
 import ProfileNavbar from './components/ProfileNavbar';
+import Publications from './components/Publications';
 import Carousel from './components/Carousel';
 import Breadcrumb from './components/Breadcrumb';
 import BookmarkPage from './components/Bookmark-Page/BookmarkPage';
@@ -33,10 +34,12 @@ const AppContent = () => {
   const handleCloseModal = () => setShowModal(false);
 
   return (
+
       <div className="App">
         {isProfilePage ? <ProfileNavbar /> : <Navbar onBookmarkClick={handleOpenModal}/>}
         <Breadcrumb />
         <Routes>
+          <Route path="/publications/conference-proceedings" element={<Publications />} />
           <Route path="/bookmarks" element={<BookmarkPage/>}/>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/login" element={<Login />} />
