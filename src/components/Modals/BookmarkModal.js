@@ -8,17 +8,19 @@ const BookmarkModal = ({ show, onClose }) => {
 
   const [folders, setFolders] = useState([]);
   const [selectedFolder, setSelectedFolder] = useState("");
+  const [titleInput, setTitleInput] = useState(pageTitle);
 
-  // 👇 This runs every time the modal is shown
   useEffect(() => {
     if (show) {
+      setTitleInput(pageTitle);
+  
       try {
         const raw = localStorage.getItem("bookmarkFolders");
         const parsed = raw ? JSON.parse(raw) : ["Publications"];
-
+  
         if (Array.isArray(parsed) && parsed.length > 0) {
           setFolders(parsed);
-          setSelectedFolder(parsed[0]); // Default to first
+          setSelectedFolder(parsed[0]);
         } else {
           setFolders(["Publications"]);
           setSelectedFolder("Publications");
@@ -29,7 +31,8 @@ const BookmarkModal = ({ show, onClose }) => {
         setSelectedFolder("Publications");
       }
     }
-  }, [show]); // 👈 Re-run when `show` changes
+  }, [show]);
+  
 
   if (!show) return null;
 
@@ -47,7 +50,7 @@ const BookmarkModal = ({ show, onClose }) => {
     if (index === -1 || !current[index].folder) {
       const newBookmark = {
         path: location.pathname,
-        title: pageTitle,
+        title: titleInput || pageTitle, // fallback to default title
         folder: selectedFolder,
       };
   
@@ -74,6 +77,14 @@ const BookmarkModal = ({ show, onClose }) => {
           Path: <code>{location.pathname}</code>
         </p>
 
+        <label htmlFor="title-input">Bookmark Title:</label>
+        <input
+          id="title-input"
+          type="text"
+          value={titleInput}
+          onChange={(e) => setTitleInput(e.target.value)}
+          style={{ width: "100%", padding: "6px", marginBottom: "10px" }}
+        />
         <label htmlFor="folder-select">Select Folder:</label>
         <select
           id="folder-select"
