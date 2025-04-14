@@ -10,17 +10,17 @@ const pages = [
 
 const Carousel = () => {
     return (
-            <div id="carouselExampleIndicators" className="carousel slide" data-bs-theme="dark" data-bs-ride="carousel" style={{ maxWidth: "600px", margin: "auto", padding:"10px" }}>
+            <div id="carouselExampleIndicators" className="carousel slide" data-bs-theme="dark" data-bs-ride="carousel" style={{ width: "100%", height: "350px", backgroundColor: "white" }}>
              {/* indicators */}
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             {/* carousel images */}
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="./carousel-images/adi-goldstein-EUsVwEOsblE-unsplash.jpg" class="d-block w-100 opacity-50" alt="..."/>
+                <img src="./carousel-images/adi-goldstein-EUsVwEOsblE-unsplash.jpg" class="d-block w-100 opacity-50" alt="..." style={{ objectFit: 'cover', height: '350px' }}/>
                     {/* add a caption to the image */}
                     {/* <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
@@ -28,18 +28,18 @@ const Carousel = () => {
                     </div> */}
                 </div>
                 <div class="carousel-item">
-                <img src="./carousel-images/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg" class="d-block w-100 opacity-50" alt="..."/>
+                <img src="./carousel-images/alexandre-debieve-FO7JIlwjOtU-unsplash.jpg" class="d-block w-100 opacity-50" alt="..." style={{ objectFit: 'cover', height: '350px' }}/>
                 </div>
                 <div class="carousel-item">
-                <img src="./carousel-images/nasa-Q1p7bh3SHj8-unsplash.jpg" class="d-block w-100 opacity-75" alt="..."/>
+                <img src="./carousel-images/nasa-Q1p7bh3SHj8-unsplash.jpg" class="d-block w-100 opacity-75" alt="..." style={{ objectFit: 'cover', height: '350px' }}/>
                 </div>
             </div>
              {/* prev and next buttons */}
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style={{ position: "absolute", left: "0", width: "5%" }}>
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" style={{ position: "absolute", right: "0", width: "5%" }}>
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
