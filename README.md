@@ -10,7 +10,7 @@ This is a redesign of the https://www.acm.org/ website, with improvemments to fe
 - Bootstrap – Styling Library
 
 # Project Structure
-|- backend
+|- backend <br> 
     |- package-lock.json
     |- package.json
     |- server.js
