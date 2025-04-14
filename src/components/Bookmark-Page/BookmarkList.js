@@ -20,9 +20,12 @@ const BookmarkList = () => {
   const handleAddFolder = () => {
     const newTitle = prompt("Enter a name for the new list:");
     if (newTitle && newTitle.trim() !== "") {
-      setFolders((prev) => [...prev, newTitle.trim()]);
+      const updatedFolders = [...folders, newTitle.trim()];
+      setFolders(updatedFolders);
+      localStorage.setItem("bookmarkFolders", JSON.stringify(updatedFolders)); // 👈 Save folders
     }
   };
+  
 
   return (
     <div>
