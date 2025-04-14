@@ -69,7 +69,7 @@ const BookmarkList = () => {
 
         <div style={{ marginTop: "10px" }}>
           <button className="bookmark-add-button" onClick={handleAddFolder}>
-            + Add New List
+            + Add New Folder
           </button>
         </div>
       </div>

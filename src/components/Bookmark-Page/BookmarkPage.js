@@ -25,7 +25,7 @@ const BookmarkPage = () => {
         </div>
 
         <div className="bookmark-panel">
-          <h2 className="bookmark-section-header">Recently Bookmarked</h2>
+          <h2 className="bookmark-section-header">Recently Visited</h2>
           <RecentlyBookmarked />
         </div>
       </div>
