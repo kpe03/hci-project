@@ -93,7 +93,7 @@ app.post('/login', async (req, res) => {
       return res.status(500).json({ message: 'Error finding user' });
     }
     if (!user) {
-      return res.status(400).json({ message: 'Username not found' });
+      return res.status(400).json({ message: 'That username does not exist. Please try again.' });
     }
 
     // User found, proceed to compare password
@@ -104,7 +104,7 @@ app.post('/login', async (req, res) => {
         console.log('User logged in:', user.username);
         res.status(200).json({ message: 'Login successful', username: user.username });
       } else {
-        res.status(400).json({ message: 'Incorrect password' });
+        res.status(400).json({ message: 'Incorrect password. Please try again.' });
       }
     } catch (error) {
       console.error('Error comparing password:', error);
