@@ -88,11 +88,9 @@ const Login = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}/>
-              <div className="password-options">
-                <a href="/forgot-password" className="forgot-link">
-                  Forgot password?
-                </a>
-              </div>
+              <a href="/forgot-password" className="forgot-link">
+                Forgot password?
+              </a>
             </div>
 
             {/* Display login error message */}
