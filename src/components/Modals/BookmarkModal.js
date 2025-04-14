@@ -99,11 +99,11 @@ const BookmarkModal = ({ show, onClose }) => {
           ))}
         </select>
 
-        <button className="btn btn-success me-2" onClick={handleBookmark}>
-          Yes, Bookmark it
-        </button>
-        <button className="btn btn-secondary" onClick={onClose}>
+        <button className="btn btn-secondary me-2" onClick={onClose}>
           Cancel
+        </button>
+        <button className="btn" onClick={handleBookmark} style = {{backgroundColor: "#2D9CDB", color: "white"}}>
+          Yes, Bookmark it
         </button>
       </div>
     </div>
