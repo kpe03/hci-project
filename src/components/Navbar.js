@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "./AuthContext"; 
 import { Link } from "react-router-dom";
+import "./BookmarkButton"
 import "./Navbar.css";
 import logo from "../assets/images/acm-logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import BookmarkButton from "./BookmarkButton";
 
-function Navbar() {
+function Navbar({onBookmarkClick}) {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
 
@@ -128,6 +130,7 @@ function Navbar() {
               </li>
     );}
 
+    
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3 border-color">
       <div className="container-fluid">
@@ -233,6 +236,11 @@ function Navbar() {
                     </Link>
                   </li>
                   <li>
+                    <Link className="dropdown-item" to="/bookmarks">
+                      My Bookmarks
+                    </Link>
+                  </li>
+                  <li>
                     <button
                       className="dropdown-item"
                       onClick={handleLogout}>
@@ -242,10 +250,7 @@ function Navbar() {
                 </ul>
               </div>
 
-              <Link to="/bookmarks" className="btn btn-primary ms-2"
-                style={{ whiteSpace: "nowrap" }}>
-                Bookmark Page
-              </Link>
+              <BookmarkButton onClick={onBookmarkClick}/>
             </div>
           ) : (
             <>
