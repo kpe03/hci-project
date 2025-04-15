@@ -102,11 +102,8 @@ function Navbar({onBookmarkClick}) {
 
   const makeLink = (linkRoute, linkName) => {
     return (
-      <Link to={linkRoute}>
-        <div clasName="dropdown-item dropdown-link">
+      <Link to={linkRoute} className="dropdown-item dropdown-link">
         {linkName}
-        </div>
-        
       </Link>
       
 
@@ -257,12 +254,12 @@ function Navbar({onBookmarkClick}) {
             </div>
           ) : (
             <>
-              <Link to="/login" className="btn btn-outline-light me-2 rounded-1"
-              style={{ backgroundColor: 'blue', color: 'white' }}>
+              <Link to="/login" className="btn btn-primary me-2 rounded-1"
+              >
                 Login
               </Link>
-              <Link to="/join" className="btn btn-outline-light rounded-1"
-              style={{ backgroundColor: 'lightblue', color: 'white' }}>
+              <Link to="/join" className="btn  btn-info rounded-1"
+              >
                 Join
               </Link>
             </>
