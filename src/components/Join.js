@@ -57,7 +57,7 @@ const Join = () => {
       console.log('Form validated, attempting registration for:', username);
       // Add actual registration API call here
       try {
-        const response = await fetch('http://localhost:3001/register', {
+        const response = await fetch('https://acm-website-r2ab.onrender.com/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
