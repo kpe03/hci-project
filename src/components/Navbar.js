@@ -257,10 +257,12 @@ function Navbar({onBookmarkClick}) {
             </div>
           ) : (
             <>
-              <Link to="/login" className="btn btn-outline-light me-2 rounded-1">
+              <Link to="/login" className="btn btn-outline-light me-2 rounded-1"
+              style={{ backgroundColor: 'blue', color: 'white' }}>
                 Login
               </Link>
               <Link to="/join" className="btn btn-outline-light rounded-1">
+              style={{ backgroundColor: 'lightblue', color: 'white' }}
                 Join
               </Link>
             </>
