@@ -54,4 +54,4 @@ Follow these steps to run the frontend and backend servers:
 
 # 🌐 Live site
 
-See the published version at: *to be added* 
+See the published version at: [https://hci-project-x9wo.onrender.com](https://hci-project-x9wo.onrender.com)
