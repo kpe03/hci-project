@@ -102,12 +102,14 @@ function Navbar({onBookmarkClick}) {
 
   const makeLink = (linkRoute, linkName) => {
     return (
-      <div clasName="dropdown-item dropdown-link">
-            <Link to={linkRoute}>
-              {linkName}
-           </Link>
-      </div>
+      <Link to={linkRoute}>
+        <div clasName="dropdown-item dropdown-link">
+        {linkName}
+        </div>
+        
+      </Link>
       
+
     );
   }
 
@@ -258,7 +260,7 @@ function Navbar({onBookmarkClick}) {
               <Link to="/login" className="btn btn-outline-light me-2 rounded-1">
                 Login
               </Link>
-              <Link to="/login" className="btn btn-outline-light rounded-1">
+              <Link to="/join" className="btn btn-outline-light rounded-1">
                 Join
               </Link>
             </>
