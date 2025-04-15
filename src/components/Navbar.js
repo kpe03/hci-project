@@ -261,8 +261,8 @@ function Navbar({onBookmarkClick}) {
               style={{ backgroundColor: 'blue', color: 'white' }}>
                 Login
               </Link>
-              <Link to="/join" className="btn btn-outline-light rounded-1">
-              style={{ backgroundColor: 'lightblue', color: 'white' }}
+              <Link to="/join" className="btn btn-outline-light rounded-1"
+              style={{ backgroundColor: 'lightblue', color: 'white' }}>
                 Join
               </Link>
             </>
