@@ -1,3 +1,5 @@
+DISCLAIMER: This project was developed for the purpose of a school project and we own no acm assets or rights.
+
 # ACM.org 
 
 This is a redesign of the https://www.acm.org/ website, with improvemments to features such as the navbar, landing page, and profile page. 
